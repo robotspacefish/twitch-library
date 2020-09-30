@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CLIENT_ID, AUTH } from '../api';
+import Game from './Game';
 
 function Games() {
   const [games, setGames] = useState([]);
@@ -32,7 +33,11 @@ function Games() {
   return (
     <div>
       <h1>Most Popular Games</h1>
-
+      <div className="row">
+        {games.map(game => (
+          <Game game={game} />
+        ))}
+      </div>
     </div>
   );
 };

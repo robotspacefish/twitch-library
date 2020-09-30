@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CLIENT_ID, AUTH } from '../apiKey';
+import { CLIENT_ID, AUTH } from '../api';
 
 function Games() {
   const [games, setGames] = useState([]);

@@ -15,7 +15,15 @@ function Games() {
     })
       .then(res => res.json())
       .then(data => {
-        setGames(data.data)
+        const formattedData = data.data.map(game => {
+          // add dimensions to box art
+          let gameCopy = { ...game };
+          gameCopy.box_art_url = game.box_art_url.replace('{width}', 300).replace('{height}', 400);
+
+          return gameCopy;
+        });
+
+        setGames(formattedData);
       })
       .catch(e => console.log)
 
